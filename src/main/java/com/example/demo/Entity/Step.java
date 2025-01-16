@@ -7,7 +7,7 @@ public class Step {
     @Id @GeneratedValue
     private int id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "foodId", nullable = false)
     private Food food;
 

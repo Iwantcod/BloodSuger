@@ -1,36 +1,39 @@
-package com.example.demo.Entity;
-
-
-import jakarta.persistence.*;
+package com.example.demo.DTO;
 
 import java.time.LocalDate;
 
-@Entity
-public class History {
-    @Id @GeneratedValue
+public class HistoryDTO {
     private int id;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "userId")
-    private Users user;
-    @Column(nullable = false)
+    private int userId;
     private int bloodSugerHistory;
-    @Column(nullable = false)
     private LocalDate checkDate;
-    @Column(nullable = false)
     private String session;
     private int diseaseLevel;
+
+    public HistoryDTO() {}
+    public HistoryDTO(int id, int userId, int bloodSugerHistory, LocalDate checkDate, String session, int diseaseLevel) {
+        this.id = id;
+        this.userId = userId;
+        this.bloodSugerHistory = bloodSugerHistory;
+        this.checkDate = checkDate;
+        this.session = session;
+        this.diseaseLevel = diseaseLevel;
+    }
 
     public int getId() {
         return id;
     }
 
-    public Users getUser() {
-        return user;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setUser(Users user) {
-        this.user = user;
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public int getBloodSugerHistory() {

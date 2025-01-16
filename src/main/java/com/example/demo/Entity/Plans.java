@@ -8,7 +8,7 @@ import java.time.LocalDate;
 public class Plans {
     @Id @GeneratedValue
     private int id;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "userId", nullable = false)
     private Users user;
     @Column(nullable = false)

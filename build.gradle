@@ -25,9 +25,11 @@ dependencies {
 	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
 	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.springframework.security:spring-security-test'
+//	testImplementation 'org.springframework.security:spring-security-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	implementation("com.microsoft.sqlserver:mssql-jdbc:11.2.0.jre8")
+	implementation 'org.springframework.security:spring-security-crypto'
+
 }
 
 tasks.named('test') {

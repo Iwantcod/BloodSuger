@@ -6,10 +6,10 @@ import jakarta.persistence.*;
 public class Details {
     @Id @GeneratedValue
     private int id;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "foodId", nullable = false)
     private Food food;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "planId", nullable = false)
     private Plans plans;
 
